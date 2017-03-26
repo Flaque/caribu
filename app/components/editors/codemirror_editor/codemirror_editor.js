@@ -8,6 +8,7 @@ import CodeMirror from 'react-codemirror'
 // Funky loading so that we ignore css modules
 // See http://bit.ly/2o6MkVp for more.
 import '!style-loader!css-loader!codemirror/lib/codemirror.css'
+import '!style-loader!css-loader!./codemirror_editor.css'
 
 const editorOptions = {
   lineNumbers: true
