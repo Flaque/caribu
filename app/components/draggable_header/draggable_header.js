@@ -1,8 +1,8 @@
 import React from 'react'
-import './draggable_header.css'
+import styles from './draggable_header.css'
 
 function DraggableHeader(props) {
-  return <div className="draggable-header"></div>
+  return <div className={styles.draggable}></div>
 }
 
 export default DraggableHeader

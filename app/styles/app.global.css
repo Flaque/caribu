@@ -17,3 +17,8 @@ body {
   overflow: hidden;
   font-family: Helvetica, sans-serif;
   font-weight: lighter; }
+
+#root, #app {
+  height: 100%;
+  width: 100%;
+}

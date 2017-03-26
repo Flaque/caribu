@@ -1,4 +1,4 @@
-.draggable-header {
+.draggable {
   -webkit-user-select: none;
   -webkit-app-region: drag;
   height: 50px;
@@ -6,6 +6,6 @@
   position: fixed;
 }
 
-.draggable-header button {
+.draggable button {
   -webkit-app-region: no-drag;
 }
