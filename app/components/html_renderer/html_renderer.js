@@ -1,9 +1,11 @@
 import React from 'react';
+import styles from './html_renderer.css'
+
 
 /**
  * Returns a json object that REACT needs to render stuff
  * dangerously.
- * 
+ *
  * @param {*} rawHTML - the html to be inserted dangerously
  */
 function getDangerousHTML(rawHTML){
@@ -22,7 +24,7 @@ function composeUserHTML(html, css){
 
 class HTMLRenderer extends React.Component{
     render(){
-        return (<iframe dangerouslySetInnerHTML={composeUserHTML(this.props.html, this.props.css)}>
+        return (<iframe className={styles.html_renderer} dangerouslySetInnerHTML={composeUserHTML(this.props.html, this.props.css)}>
         </iframe>)
     }
 }

@@ -2,7 +2,7 @@
  * The top level component for Caribu.
  */
 import React from 'react'
-import HTMLRenderer from 'html_renderer.js';
+import HTMLRenderer from 'html_renderer/html_renderer.js';
 import DraggableHeader from 'draggable_header/draggable_header.js'
 import Editors from "editors/editors.js"
 import styles from './root.css'
