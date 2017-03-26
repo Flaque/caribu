@@ -3,12 +3,13 @@
  */
 import React from 'react'
 import CodeMirrorEditor from './codemirror_editor/codemirror_editor.js'
+import styles from './editors.css'
 
 class Editors extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.editors}>
         <CodeMirrorEditor code={"//html"}/>
         <CodeMirrorEditor code={"//css"}/>
       </div>
