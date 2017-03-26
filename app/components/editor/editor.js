@@ -1,5 +1,6 @@
 import CodeMirror from 'react-codemirror'
 import 'codemirror/lib/codemirror.css'
+import React from 'react'
 
 const editorOptions = {
   lineNumbers: true
