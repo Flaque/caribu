@@ -1,3 +1,7 @@
+/**
+ * A wrapper around CodeMirror that lets us update and do
+ * fancy shmancy code stuffs.
+ */
 import React from 'react'
 import CodeMirror from 'react-codemirror'
 

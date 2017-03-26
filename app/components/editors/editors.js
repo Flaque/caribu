@@ -1,3 +1,6 @@
+/**
+ * The top level component for the editors
+ */
 import React from 'react'
 import CodeMirrorEditor from './codemirror_editor/codemirror_editor.js'
 
