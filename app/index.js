@@ -6,9 +6,9 @@ import { render } from 'react-dom';
 import 'app.global.css';
 import 'old.global.css';
 import 'skeleton.global.css';
-import Main from 'main/main.js'
+import Root from 'root/root.js'
 
 render(
-  <Main />,
+  <Root />,
   document.getElementById('root')
 );
