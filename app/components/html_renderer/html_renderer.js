@@ -18,14 +18,14 @@ function getDangerousHTML(rawHTML){
  * for render on the frame.
  */
 function composeUserHTML(html, css){
-    var styleTag = "<style>" + css + "</style>";
-    return getDangerousHTML(css + html);
+    var style = "data:text/html,<style>"+ css +"</style>";
+    return encodeURI(style + html);
 }
 
 class HTMLRenderer extends React.Component{
     render(){
-        return (<iframe className={styles.html_renderer} dangerouslySetInnerHTML={composeUserHTML(this.props.html, this.props.css)}>
-        </iframe>)
+        console.log(composeUserHTML(this.props.html, this.props.css));
+        return (<iframe className={styles.html_renderer} src={composeUserHTML(this.props.html, this.props.css)}/>);
     }
 }
 

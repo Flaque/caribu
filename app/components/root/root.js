@@ -13,7 +13,7 @@ function Root(props) {
       <DraggableHeader />
 
       <div className={styles.rightSide}>
-        <HTMLRenderer html={'jilji'} css={''}/>
+        <HTMLRenderer html={'This is running'} css={''}/>
         <Editors />
       </div>
     </div>
