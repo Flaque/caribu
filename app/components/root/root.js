@@ -7,17 +7,40 @@ import DraggableHeader from 'draggable_header/draggable_header.js'
 import Editors from "editors/editors.js"
 import styles from './root.css'
 
-function Root(props) {
-  return (
-    <div id="app">
-      <DraggableHeader />
+class Root extends React.Component {
 
-      <div className={styles.rightSide}>
-        <HTMLRenderer html={'This is running'} css={''}/>
-        <Editors />
+  constructor(props) {
+    super(props)
+    this.state = {
+      html: "",
+      css: ""
+    }
+  }
+
+  onHTMLChange = (html) => {
+    this.setState({html: html})
+  }
+
+  onCSSChange = (css) => {
+    this.setState({css: css})
+  }
+
+  render() {
+    return (
+      <div id="app">
+        <DraggableHeader />
+
+        <div className={styles.rightSide}>
+          <HTMLRenderer
+            html={this.state.html}
+            css={this.state.css}/>
+          <Editors
+            onHTMLChange={this.onHTMLChange}
+            onCSSChange={this.onCSSChange} />
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Root

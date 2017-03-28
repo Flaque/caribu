@@ -18,20 +18,19 @@ class CodeMirrorEditor extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { code: this.props.code }
+    this.state = { code: "" }
   }
 
-  updateCode = (newCode) => {
-    this.setState({
-      code: newCode
-    })
+  onChange = (code) => {
+    this.setState({code: code})
+    this.props.updateCode(code)
   }
 
   render() {
     return (
       <CodeMirror
         value={this.state.code}
-        onChange={this.updateCode}
+        onChange={this.onChange}
         options={editorOptions} />
     )
   }

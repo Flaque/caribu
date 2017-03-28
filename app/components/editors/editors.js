@@ -10,8 +10,8 @@ class Editors extends React.Component {
   render() {
     return (
       <div className={styles.editors}>
-        <CodeMirrorEditor code={"//html"}/>
-        <CodeMirrorEditor code={"//css"}/>
+        <CodeMirrorEditor updateCode={this.props.onHTMLChange}/>
+        <CodeMirrorEditor updateCode={this.props.onCSSChange}/>
       </div>
     )
   }

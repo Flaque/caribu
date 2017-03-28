@@ -24,7 +24,6 @@ function composeUserHTML(html, css){
 
 class HTMLRenderer extends React.Component{
     render(){
-        console.log(composeUserHTML(this.props.html, this.props.css));
         return (<iframe className={styles.html_renderer} src={composeUserHTML(this.props.html, this.props.css)}/>);
     }
 }
