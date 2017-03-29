@@ -8,17 +8,40 @@ import Editors from "editors/editors.js"
 import styles from './root.css'
 import Sidebar from 'sidebar/Sidebar.js'
 
-function Root(props) {
-  return (
-    <div id="app">
-      <DraggableHeader />
-      <Sidebar/>
-      <div className={styles.rightSide}>
-        <HTMLRenderer html={'jilji'} css={''}/>
-        <Editors />
+class Root extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      html: "",
+      css: ""
+    }
+  }
+
+  onHTMLChange = (html) => {
+    this.setState({html: html})
+  }
+
+  onCSSChange = (css) => {
+    this.setState({css: css})
+  }
+
+  render() {
+    return (
+      <div id="app">
+        <DraggableHeader />
+        <Sidebar/>
+        <div className={styles.rightSide}>
+          <HTMLRenderer
+            html={this.state.html}
+            css={this.state.css}/>
+          <Editors
+            onHTMLChange={this.onHTMLChange}
+            onCSSChange={this.onCSSChange} />
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Root
