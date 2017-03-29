@@ -1,0 +1,11 @@
+.draggable {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+}
+
+.draggable button {
+  -webkit-app-region: no-drag;
+}

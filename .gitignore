@@ -45,3 +45,8 @@ main.js.map
 
 .idea
 npm-debug.log.*
+
+
+
+#editors
+.vscode

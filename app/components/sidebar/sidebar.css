@@ -1,0 +1,34 @@
+#sidebar {
+  float: left;
+  height: 100%;
+  width: 300px;
+  background: #282828;
+  transition: width 0.3s;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: scroll;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 800px) {
+  #sidebar {
+    width: 0;
+    min-width: 0;
+    z-index: 3;
+    max-width: 250px;
+  }
+  #sidebar.slide-over {
+    width: 70%;
+    position: absolute;
+    z-index: 3;
+    max-width: 250px;
+  }
+}
+
+.menu {
+  margin-top: 50px;
+  padding: 0;
+  list-style: none;
+  color: white;
+}

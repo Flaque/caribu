@@ -30,6 +30,10 @@ export default {
     modules: [
       path.join(__dirname, 'app'),
       'node_modules',
+      path.join(__dirname, 'app/components'),
+      path.join(__dirname, 'app/utils'),
+      path.join(__dirname, 'app/styles'),
+      path.join(__dirname, 'app/lib'),
     ],
   },
 

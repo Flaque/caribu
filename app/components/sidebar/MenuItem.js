@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
+import styles from './MenuItem.css'
 
 class MenuItem extends React.Component {
   render() {
     return (
-      <li class="menu-item" value={this.props.name}>
-        <div class="menu-inner"> {this.props.name} </div>
-        <div class="trash circle-icon"> <i class='fa fa-trash-o'></i>
+      <li className={styles.menu_item} value={this.props.name}>
+        <div className={styles.menu_inner}> {this.props.name} </div>
+        <div className={styles.circle_icon}> <i className='fa fa-trash-o'></i>
         </div>
       </li>
     );

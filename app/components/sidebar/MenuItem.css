@@ -1,0 +1,35 @@
+.menu_item {
+  width: 200px;
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 2px;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+}
+.menu_inner {
+  float: left;
+}
+#add-item {
+  font-weight: bold;
+  cursor: default;
+}
+.menu_item:not(#add-item):hover {
+  background: #333333;
+}
+.menu_item.active {
+  background: #333333;
+}
+.menu_item .circle_icon {
+  float: right;
+  position: relative;
+  top: 3px;
+}
+.menu_item .circle_icon:hover {
+  background: #e74c3c;
+}
+.circle_icon:hover .fa_trash_o {
+  color: white;
+}
