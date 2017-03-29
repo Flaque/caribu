@@ -8,7 +8,7 @@ class MenuItemAdd extends React.Component {
       <li id={styles.add_item} className={styles.menu_item}>
         Add Element
         <div className={styles.circle_icon}>
-          <i className='fa fa-trash-o' aria-hidden="true"></i>
+          <i className='fa fa-pencil-square-o' aria-hidden="true"></i>
         </div>
       </li>
     );

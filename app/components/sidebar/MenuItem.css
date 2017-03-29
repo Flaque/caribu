@@ -25,11 +25,17 @@
 .menu_item .circle_icon {
   float: right;
   position: relative;
-  top: 3px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  display: inline-flex;
+justify-content: center;
+align-items: center;
 }
 .menu_item .circle_icon:hover {
   background: #e74c3c;
 }
 .circle_icon:hover .fa_trash_o {
   color: white;
+  line-height:30px;
 }
