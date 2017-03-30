@@ -39,3 +39,21 @@ align-items: center;
   color: white;
   line-height:30px;
 }
+
+input.invisible_input {
+  background: #444444;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  height: 100%;
+  margin: 0;
+  float: left;
+  max-width:160px;
+  padding-left: 10px;
+}
+
+input.invisible_input:focus {
+  border: none;
+}
