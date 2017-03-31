@@ -8,17 +8,20 @@ class MenuItem extends React.Component {
     super(props)
     this.state = {
       editable: false,
-      name: this.props.name
+      item: this.props.item
     }
   }
 
   save = () => {
     this.setState({editable: false})
-    this.props.changeName(this.state.name)
+    this.props.changeItem(this.state.item)
   }
 
   onInputChange = (e) => {
-    this.setState({name: e.target.value})
+    const name = e.target.value
+    this.setState((prevState) => {
+      prevState.item.name = name
+    })
   }
 
   onKeyPress = (e) => {
@@ -40,7 +43,7 @@ class MenuItem extends React.Component {
         onClick={this.onClick}
         onDoubleClick={this.onDoubleClick}
         className={styles.menu_item}
-        value={this.props.name}>
+        value={this.props.item.name}>
 
         <div className={styles.menu_inner}>
           {this.state.editable ? (
@@ -49,9 +52,9 @@ class MenuItem extends React.Component {
                 onKeyPress={this.onKeyPress}
                 className={styles.invisible_input}
                 onChange={this.onInputChange}
-                type="text" value={this.state.name}/>
+                type="text" value={this.state.item.name}/>
             ) : (
-              <span> {this.props.name} </span>
+              <span> {this.props.item.name} </span>
             )
           }
         </div>

@@ -9,21 +9,30 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: "test.html"
+      items: [{name: "test.html"}, {name: "cats"}]
     }
   }
 
-  changeName = (name) => {
-    this.setState({name : name})
+  changeItem = (item, index) => {
+    this.setState((prevState) => {
+      prevState.items[index] = item
+    })
   }
 
   render() {
+    const items = this.state.items.map((item, index) => {
+      return <MenuItem
+        item={item}
+        index={index}
+        key={index}
+        changeItem={this.changeItem}/>
+    })
+
     return (
       <div id={styles.sidebar}>
         <ul className={styles.menu}>
           <MenuItemAdd/>
-          <MenuItem name={this.state.name}
-            changeName={this.changeName}/>
+          {items}
         </ul>
       </div>
     );
