@@ -19,6 +19,12 @@ class Sidebar extends React.Component {
     })
   }
 
+  addItem = () => {
+    this.setState((prevState) => {
+      prevState.items.push({name: "untitled", new: true})
+    })
+  }
+
   render() {
     const items = this.state.items.map((item, index) => {
       return <MenuItem
@@ -31,7 +37,7 @@ class Sidebar extends React.Component {
     return (
       <div id={styles.sidebar}>
         <ul className={styles.menu}>
-          <MenuItemAdd/>
+          <MenuItemAdd onClick={this.addItem}/>
           {items}
         </ul>
       </div>

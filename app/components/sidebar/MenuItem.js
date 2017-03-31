@@ -7,7 +7,7 @@ class MenuItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      editable: false,
+      editable: this.props.item.new,
       item: this.props.item
     }
   }
