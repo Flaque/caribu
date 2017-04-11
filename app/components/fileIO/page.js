@@ -17,6 +17,10 @@ function createFile(here, name) {
   here.file(name) //Write empty file if does not exist
 }
 
+/**
+ *
+ */
+
 export default class {
   /**
    * Creates an html and css file under name.

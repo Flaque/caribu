@@ -55,6 +55,55 @@ export default class {
   }
 
   /*
+  Deletes the specified page.
+   */
+  deletePage(name) {
+
+    // First delete this page's html and css files.
+    var htmlPath = this.pages[name].htmlName
+    var cssPath = this.pages[name].cssName
+    this.here.remove(htmlPath)
+    this.here.remove(cssPath)
+
+    // Remove the page from the list of pages for this project.
+    delete this.pages[name]
+  }
+
+  /**
+  * Rename the page at oldName to newName
+   */
+  renamePage(oldName, newName) {
+
+    // extract old page variable
+    var page = this.pages[oldName]
+
+    // rename files
+    this.here.rename(page.htmlName, newName + '.html')
+    this.here.rename(page.cssName, newName + '.css')
+
+    // Remove old page var from dict and add new one.
+    delete this.pages[oldName]
+    this.createPage(newName)
+  }
+
+  /**
+   * Rename this project to something else.
+   */
+  renameProject(newName) {
+
+    // First rename this directory
+    jetpack.cwd(this.filepath).rename(this.name, newName)
+    var newHere = jetpack.cwd(this.filepath).dir(newName)
+
+    // reassign important variables
+    this.name = newName
+    this.here = newHere
+    for (var key in this.pages) {
+      this.pages[key].here = this.here
+    }
+  }
+
+  /*
   Returns the page at specified name.
    */
   getPage(name) {
